@@ -148,7 +148,6 @@
               <span
                 class="position-absolute translate-middle badge rounded-pill bg-danger"
               >
-                {{ cartProducts.length }}
                 <span class="visually-hidden">unread messages</span>
               </span>
             </a>
@@ -163,18 +162,15 @@
                     <img
                       class="img-fluid"
                       style="height: 30px; border-radius: 50%"
-                      [src]="cart.productImageUrl"
+                      [src]=""
                       class="card-img-top"
                     />
                   </div>
                   <div class="col-3">
-                    {{ cart.productName }}
                   </div>
                   <div class="col-2">
-                    {{ cart.quantity + 1 }}
                   </div>
                   <div class="col-2 text-end">
-                    {{ cart.productPrice }}
                   </div>
                 </div>
 
