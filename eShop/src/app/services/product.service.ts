@@ -12,4 +12,8 @@ export class ProductService {
   getAllProducts(): Observable<any[]> {
     return this.http.get<any[]>('https://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts');
   }
+
+  addToCart(object: any): Observable<any> {
+    return this.http.post<any>('https://onlinetestapi.gerasim.in/api/Ecomm/addToCart', object);
+  }
 }
