@@ -33,7 +33,10 @@ export class HomeComponent implements OnInit {
     this.cartObj.ProductId = productId;
 
     this.productService.addToCart(this.cartObj).subscribe((result: any) => {
-      this.productList = result.data;
+      if(result.result) {
+        alert('Product added to cart!')
+        this.productService.cartAddedSubject.next(true);
+      }
     });
   }
 }

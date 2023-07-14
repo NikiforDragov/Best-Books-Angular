@@ -4,7 +4,7 @@
     class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-top"
   >
     <div class="container">
-      <a class="navbar-brand fs-2 fw-bold" href="#" 
+      <a class="navbar-brand fs-2 fw-bold" href="#"
         ><i class="fa fa-cart-shopping fs-2" style="color: #f54242"></i
         ><span class="textBlur">Shopwise</span></a
       >
@@ -148,6 +148,7 @@
               <span
                 class="position-absolute translate-middle badge rounded-pill bg-danger"
               >
+                {{ cartProducts.length }}
                 <span class="visually-hidden">unread messages</span>
               </span>
             </a>
@@ -162,15 +163,18 @@
                     <img
                       class="img-fluid"
                       style="height: 30px; border-radius: 50%"
-                      [src]=""
+                      [src]="cart.productImageUrl"
                       class="card-img-top"
                     />
                   </div>
                   <div class="col-3">
+                    {{ cart.productName }}
                   </div>
                   <div class="col-2">
+                    {{ cart.quantity + 1 }}
                   </div>
                   <div class="col-2 text-end">
+                    {{ cart.productPrice }}
                   </div>
                 </div>
 
