@@ -28,4 +28,8 @@ export class ProductService {
       'https://onlinetestapi.gerasim.in/api/Ecomm/GetCartProductsByCustomerId?id=' + customerId
     );
   }
+
+  removeCartItemById(cartId: number) : Observable<any[]>  {
+    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/DeleteProductFromCartById?id=" + cartId);
+  }
 }
