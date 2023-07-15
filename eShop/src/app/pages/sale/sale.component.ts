@@ -8,7 +8,20 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class SaleComponent implements OnInit {
   cartProducts: any[] = [];
-  subTotal: number = 0
+  subTotal: number = 0;
+  saleObj: any = {
+    saleId: 0,
+    custId: 1,
+    saleDate: new Date(),
+    totalInvoiceAmount: 0,
+    discount: 0,
+    paymentNaration: 'Patmm',
+    deliveryAddress1: 'Plot nio 122',
+    deliveryAddress2: 'Ner ATM',
+    deliveryCity: 'Pune',
+    deliveryPinCode: '440033',
+    deliveryLandMark: 'ATM',
+  };
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
@@ -26,8 +39,20 @@ export class SaleComponent implements OnInit {
   }
 
   removeItem(id: number) {
-    this.productService.removeCartItemById(id).subscribe((res:any) => {
-      if(res.result) {
+    this.productService.removeCartItemById(id).subscribe((res: any) => {
+      if (res.result) {
+        this.loadCart();
+        this.productService.cartAddedSubject.next(true);
+      }
+    });
+  }
+
+  makeSale(): void {
+    this.saleObj.totalInvoiceAmount = this.subTotal;
+    this.productService.cartAddedSubject.next(true);
+    this.productService.makeSale( this.saleObj).subscribe((res: any) => {
+      if (res.result) {
+        alert("Sale Success")
         this.loadCart();
         this.productService.cartAddedSubject.next(true);
       }

@@ -32,4 +32,8 @@ export class ProductService {
   removeCartItemById(cartId: number) : Observable<any[]>  {
     return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/DeleteProductFromCartById?id=" + cartId);
   }
+
+  makeSale(obj: any) : Observable<any> {
+    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/Ecomm/AddNewSale",obj);
+  }
 }
