@@ -8,7 +8,7 @@
 }
 
 a:hover {
-    color: red !important;
+    color: #42f54b !important;
 }
 
 .dropdown:hover .dropdown-menu {
