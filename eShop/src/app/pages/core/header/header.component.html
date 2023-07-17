@@ -4,7 +4,7 @@
     class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-top"
   >
     <div class="container">
-      <a class="navbar-brand fs-2 fw-bold" href="#"
+      <a class="navbar-brand fs-2 fw-bold" routerLink="/"
         ><i class="fa fa-cart-shopping fs-2" style="color: #42f54b"></i
         ><span class="textBlur">E-lectronics</span></a
       >
@@ -23,10 +23,10 @@
       <!-- Nav Items -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <a
-              class="nav-link dropdown-toggle fw-semibold text-uppercase me-1 text-black me-1"
-              href="#"
+              class="nav-link fw-semibold text-uppercase me-1 text-black me-1"
+              routerLink="/"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
@@ -34,31 +34,8 @@
             >
               home
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Option</a></li>
-              <li><a class="dropdown-item" href="#">Option</a></li>
-
-              <li><a class="dropdown-item" href="#">Option</a></li>
-            </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black me-1"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              pages
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Option</a></li>
-              <li><a class="dropdown-item" href="#">Option</a></li>
 
-              <li><a class="dropdown-item" href="#">Option</a></li>
-            </ul>
-          </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle fw-semibold text-uppercase text-black me-1"
@@ -68,58 +45,27 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              product
+              catalog
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Option</a></li>
-              <li><a class="dropdown-item" href="#">Option</a></li>
+              <li><a class="dropdown-item" href="#">All</a></li>
+              <li><a class="dropdown-item" href="#">Laptops</a></li>
 
-              <li><a class="dropdown-item" href="#">Option</a></li>
-            </ul>
-          </li>
-          <li
-            class="nav-item dropdown fw-semibold text-uppercase text-black me-1"
-          >
-            <a
-              class="nav-link dropdown-toggle fw-semibold text-uppercase text-black me-1"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              blog
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Option</a></li>
-              <li><a class="dropdown-item" href="#">Option</a></li>
-
-              <li><a class="dropdown-item" href="#">Option</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle fw-semibold text-uppercase text-black me-1"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              shop
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Option</a></li>
-              <li><a class="dropdown-item" href="#">Option</a></li>
-
-              <li><a class="dropdown-item" href="#">Option</a></li>
+              <li><a class="dropdown-item" href="#">Smartphones</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a
               class="nav-link fw-semibold text-uppercase text-black me-1"
               href="#"
-              >Contact us</a
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link fw-semibold text-uppercase text-black me-1"
+              href="#"
+              >Register</a
             >
           </li>
           <li class="nav-item">
@@ -135,7 +81,7 @@
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle cart fw-semibold text-uppercase text-black me-1"
-              href="#"
+              routerLink="/sale"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
