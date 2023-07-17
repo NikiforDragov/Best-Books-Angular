@@ -10,6 +10,7 @@ import { SaleComponent } from './pages/sale/sale.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CoreModule } from './pages/core/core.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
