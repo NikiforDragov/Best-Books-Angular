@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from './pages/core/core.module';
 import { BooksModule } from './pages/books/books.module';
+import { UserModule } from './pages/user/user.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BooksModule } from './pages/books/books.module';
     BrowserModule,
     CoreModule,
     BooksModule,
+    UserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
