@@ -14,6 +14,12 @@
           #inputTitle="ngModel"
           required
         />
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputTitle.touched">
+          <p class="text-danger" *ngIf="inputTitle.errors?.['required']">
+            Title is required!
+          </p>
+        </ng-container>
       </div>
     </div>
     <div class="form-group">
@@ -29,6 +35,12 @@
           #inputAuthor="ngModel"
           required
         />
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputAuthor.touched">
+          <p class="text-danger" *ngIf="inputAuthor.errors?.['required']">
+            Author is required!
+          </p>
+        </ng-container>
       </div>
     </div>
     <div class="form-group">
@@ -44,6 +56,12 @@
           #inputImageUrl="ngModel"
           required
         />
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputImageUrl.touched">
+          <p class="text-danger" *ngIf="inputImageUrl.errors?.['required']">
+            ImageUrl is required!
+          </p>
+        </ng-container>
       </div>
     </div>
     <div class="form-group">
@@ -56,6 +74,12 @@
           #inputDescription="ngModel"
           required
         ></textarea>
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputDescription.touched">
+          <p class="text-danger" *ngIf="inputDescription.errors?.['required']">
+            Description is required!
+          </p>
+        </ng-container>
       </div>
     </div>
     <div class="form-group">
@@ -71,9 +95,14 @@
           #inputPages="ngModel"
           required
         />
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputPages.touched">
+          <p class="text-danger" *ngIf="inputPages.errors?.['required']">
+            Pages count is required!
+          </p>
+        </ng-container>
       </div>
     </div>
-    <!-- form-group // -->
     <div class="form-group">
       <label for="date" class="col-sm-3 control-label">Publication date</label>
       <div class="col-sm-3">
@@ -87,6 +116,12 @@
           #inputPublicationDate="ngModel"
           required
         />
+        <!-- Error Handling -->
+        <ng-container *ngIf="inputPublicationDate.touched">
+          <p class="text-danger" *ngIf="inputPublicationDate.errors?.['required']">
+            Publication date is required!
+          </p>
+        </ng-container>
       </div>
     </div>
     <hr />
