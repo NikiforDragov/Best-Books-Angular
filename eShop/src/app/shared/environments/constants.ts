@@ -1,0 +1,1 @@
+export const FIREBASE_URL = 'https://best-books-29870-default-rtdb.firebaseio.com'
