@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
+import { HomeComponent } from './pages/home/home.component';
 import { BooksListComponent } from './pages/books/books-list/books-list.component';
-import { HomeComponent } from './pages/core/home/home.component';
+import { LoginComponent } from './pages/user/login/login.component';
+import { RegisterComponent } from './pages/user/register/register.component';
+import { AddBookComponent } from './pages/books/add-book/add-book.component';
+
+
 
 const routes: Routes = [
   {
@@ -10,9 +17,21 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
     path: 'books',
     component: BooksListComponent,
   },
+  {
+    path: 'add',
+    component: AddBookComponent,
+  }
 ];
 
 @NgModule({
