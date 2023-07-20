@@ -1,7 +1,7 @@
-export interface Book {
+export interface IBook {
   title: string;
-  bookAuthor: string;
-  imgUrl: string;
+  author: string;
+  imageUrl: string;
   description: string;
   pages: number;
   publicationDate: Date;
