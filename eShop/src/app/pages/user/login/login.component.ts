@@ -20,9 +20,11 @@ export class LoginComponent implements OnInit {
 
     const { email, password } = form.value;
 
-    this.userService.login().subscribe((users) => {
-      console.log(users)
-      this.router.navigate(['/']);
+    this.userService.login(email,password).subscribe((user) => {
+      if(Object.keys(user).length > 0) {
+        console.log(user);
+        this.router.navigate(['/']);
+      }
     });
   }
 }

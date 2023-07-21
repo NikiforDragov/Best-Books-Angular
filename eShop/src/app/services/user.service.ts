@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FIREBASE_URL } from '../shared/environments/constants';
@@ -19,8 +19,10 @@ export class UserService {
     return this.http.post<IUser>(url, { email, username, password });
   }
 
-  login() {
+  login(email: string, password: string) {
     const url = `${FIREBASE_URL}/users.json`;
-    return this.http.get(url);
+    return this.http.get(url, {
+      params: new HttpParams().set('orderBy', '"email"').set('equalTo', `"${email}"`),
+    });
   }
 }

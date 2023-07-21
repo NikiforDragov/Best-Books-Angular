@@ -20,7 +20,6 @@ export class RegisterComponent {
 
     this.userService.register(email, username, password).subscribe(
       (response) => {
-        console.log(response);
         form.reset();
         this.router.navigate(['login']);
       },
