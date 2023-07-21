@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+
+  onRegister(form: NgForm) {
+    const userData = form.value;
+    console.log(userData);
+    
+  }
 }
