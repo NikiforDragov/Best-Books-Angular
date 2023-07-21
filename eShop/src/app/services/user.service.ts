@@ -18,4 +18,9 @@ export class UserService {
     const url = `${FIREBASE_URL}/users.json`;
     return this.http.post<IUser>(url, { email, username, password });
   }
+
+  login() {
+    const url = `${FIREBASE_URL}/users.json`;
+    return this.http.get(url);
+  }
 }

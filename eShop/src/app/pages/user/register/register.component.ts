@@ -16,8 +16,6 @@ export class RegisterComponent {
       return;
     }
 
-    const userData = form.value;
-
     const { email, username, password } = form.value;
 
     this.userService.register(email, username, password).subscribe(
