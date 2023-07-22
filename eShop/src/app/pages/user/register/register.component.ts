@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RegisterComponent {
   constructor(private userService: UserService, private router: Router) {}
+  errorMsg!: string;
 
   onRegister(form: NgForm): void {
     if (form.invalid) {
@@ -24,7 +25,9 @@ export class RegisterComponent {
         this.router.navigate(['login']);
       },
       // Todo error handling
-      (error) => console.log(error)
+      (error) => {
+        this.errorMsg = error.error.error.message;
+      }
     );
   }
 }

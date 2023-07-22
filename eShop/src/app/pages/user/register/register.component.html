@@ -1,4 +1,18 @@
 <div class="form-signin w-100 m-auto">
+  <!-- Error -->
+  <div
+    *ngIf="errorMsg"
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>Email exists!</strong> Please try different email!
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
   <form #form="ngForm" (ngSubmit)="onRegister(form)">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
