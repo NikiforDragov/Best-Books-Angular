@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,6 +13,14 @@ export class BookService {
 
   getAllBooks(): Observable<IBook[]> {
     return this.http.get<IBook[]>(FIREBASE_URL + '/books.json');
+  }
+
+  getBookById(bookId: string) {
+    return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
+      params: new HttpParams()
+        .set('orderBy', '"_id"')
+        .set('equalTo', `"${bookId}"`),
+    });
   }
 
   createBook(bookData: IBook): Observable<IBook> {

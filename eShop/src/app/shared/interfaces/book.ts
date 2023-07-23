@@ -4,6 +4,6 @@ export interface IBook {
   author: string;
   imageUrl: string;
   description: string;
-  pages: number;
-  publicationDate: Date;
+  qty: number;
+  date: Date;
 }

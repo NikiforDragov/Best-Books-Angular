@@ -22,7 +22,7 @@ export class BooksListComponent implements OnInit {
     this.isLoading = true;
     this.bookService.getAllBooks().subscribe(
       (response) => {
-        console.log((this.booksList = Object.values(response)));
+        this.booksList = Object.values(response);
       },
       (error) => {
         console.error('Request failed!');
