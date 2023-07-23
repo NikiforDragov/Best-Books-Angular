@@ -1,134 +1,156 @@
-<div class="form-addbook w-100 m-auto">
-  <form class="display" #form="ngForm" (ngSubmit)="onAddBookHandler(form)">
-    <h3 class="h3 mb-3 fw-normal">Add your favorite book</h3>
-    <div class="form-group">
-      <label for="title" class="col-sm-3 control-label">Title</label>
-      <div class="col-sm-9">
-        <input
-          type="text"
-          class="form-control"
-          name="title"
-          id="title"
-          placeholder=""
-          ngModel
-          #inputTitle="ngModel"
-          required
-        />
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputTitle.touched">
-          <p class="text-danger" *ngIf="inputTitle.errors?.['required']">
-            Title is required!
-          </p>
-        </ng-container>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card-group mb-0">
+        <div class="card p-4">
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="onAddBookHandler(form)">
+              <h1>Add Book</h1>
+              <p class="text-muted">Add your favorite book</p>
+              <div class="input-group mb-3">
+                <span class="input-group-addon"></span>
+                <input
+                  type="text"
+                  name="title"
+                  class="form-control"
+                  placeholder="Title"
+                  ngModel
+                  #inputTitle="ngModel"
+                  required
+                />
+              </div>
+              <!--Validations -->
+              <ng-container *ngIf="inputTitle.touched">
+                <p class="text-danger" *ngIf="inputTitle.errors?.['required']">
+                  Title is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-4">
+                <span class="input-group-addon"></span>
+                <input
+                  type="text"
+                  name="author"
+                  class="form-control"
+                  placeholder="Author"
+                  ngModel
+                  #inputAuthor="ngModel"
+                  required
+                />
+              </div>
+              <!-- Validations -->
+              <ng-container *ngIf="inputAuthor.touched">
+                <p class="text-danger" *ngIf="inputAuthor.errors?.['required']">
+                  Author is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-3">
+                <span class="input-group-addon"></span>
+                <input
+                  type="text"
+                  name="genre"
+                  class="form-control"
+                  placeholder="Genre"
+                  ngModel
+                  #inputGenre="ngModel"
+                  required
+                />
+              </div>
+              <!--Validations -->
+              <ng-container *ngIf="inputGenre.touched">
+                <p class="text-danger" *ngIf="inputGenre.errors?.['required']">
+                  Genre is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-4">
+                <span class="input-group-addon"></span>
+                <input
+                  type="text"
+                  name="imageUrl"
+                  class="form-control"
+                  placeholder="ImageUrl"
+                  ngModel
+                  #inputImageUrl="ngModel"
+                  required
+                />
+              </div>
+              <!-- Validations -->
+              <ng-container *ngIf="inputImageUrl.touched">
+                <p
+                  class="text-danger"
+                  *ngIf="inputImageUrl.errors?.['required']"
+                >
+                  ImageUrl is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-4">
+                <span class="input-group-addon"></span>
+                <textarea
+                  class="form-control"
+                  name="description"
+                  placeholder="Description"
+                  ngModel
+                  #inputDescription="ngModel"
+                  required
+                ></textarea>
+              </div>
+              <!-- Validations -->
+              <ng-container *ngIf="inputDescription.touched">
+                <p
+                  class="text-danger"
+                  *ngIf="inputDescription.errors?.['required']"
+                >
+                  Description is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-4">
+                <span class="input-group-addon"></span>
+                <input
+                  type="number"
+                  name="pages"
+                  class="form-control"
+                  placeholder="Pages count"
+                  ngModel
+                  #inputPages="ngModel"
+                  required
+                />
+              </div>
+              <!-- Validations -->
+              <ng-container *ngIf="inputPages.touched">
+                <p class="text-danger" *ngIf="inputPages.errors?.['required']">
+                  Pages count is required!
+                </p>
+              </ng-container>
+              <div class="input-group mb-4">
+                <span class="input-group-addon"></span>
+                <input
+                  type="date"
+                  name="publicationDate"
+                  class="form-control"
+                  ngModel
+                  #inputPublicationDate="ngModel"
+                  required
+                />
+              </div>
+              <!-- Validations -->
+              <ng-container *ngIf="inputPublicationDate.touched">
+                <p
+                  class="text-danger"
+                  *ngIf="inputPublicationDate.errors?.['required']"
+                >
+                  Publication date is required!
+                </p>
+              </ng-container>
+              <div class="row">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-dark px-4">
+                    Add book
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="author" class="col-sm-3 control-label">Author</label>
-      <div class="col-sm-9">
-        <input
-          type="text"
-          class="form-control"
-          name="author"
-          id="author"
-          placeholder=""
-          ngModel
-          #inputAuthor="ngModel"
-          required
-        />
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputAuthor.touched">
-          <p class="text-danger" *ngIf="inputAuthor.errors?.['required']">
-            Author is required!
-          </p>
-        </ng-container>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="imageUrl" class="col-sm-3 control-label">ImageUrl</label>
-      <div class="col-sm-9">
-        <input
-          type="text"
-          class="form-control"
-          name="imageUrl"
-          id="imageUrl"
-          placeholder=""
-          ngModel
-          #inputImageUrl="ngModel"
-          required
-        />
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputImageUrl.touched">
-          <p class="text-danger" *ngIf="inputImageUrl.errors?.['required']">
-            ImageUrl is required!
-          </p>
-        </ng-container>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="about" class="col-sm-3 control-label">Description</label>
-      <div class="col-sm-9">
-        <textarea
-          class="form-control"
-          name="description"
-          ngModel
-          #inputDescription="ngModel"
-          required
-        ></textarea>
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputDescription.touched">
-          <p class="text-danger" *ngIf="inputDescription.errors?.['required']">
-            Description is required!
-          </p>
-        </ng-container>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="qty" class="col-sm-3 control-label">Pages count</label>
-      <div class="col-sm-3">
-        <input
-          type="text"
-          class="form-control"
-          name="qty"
-          id="qty"
-          placeholder=""
-          ngModel
-          #inputPages="ngModel"
-          required
-        />
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputPages.touched">
-          <p class="text-danger" *ngIf="inputPages.errors?.['required']">
-            Pages count is required!
-          </p>
-        </ng-container>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="date" class="col-sm-3 control-label">Publication date</label>
-      <div class="col-sm-3">
-        <input
-          type="date"
-          class="form-control"
-          name="date"
-          id="date"
-          placeholder=""
-          ngModel
-          #inputPublicationDate="ngModel"
-          required
-        />
-        <!-- Error Handling -->
-        <ng-container *ngIf="inputPublicationDate.touched">
-          <p class="text-danger" *ngIf="inputPublicationDate.errors?.['required']">
-            Publication date is required!
-          </p>
-        </ng-container>
-      </div>
-    </div>
-    <hr />
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <button type="submit" class="btn btn-primary">Add book</button>
-      </div>
-    </div>
-  </form>
+  </div>
 </div>

@@ -1,49 +1,26 @@
-<section id="product">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="row mt-3">
-          <div class="col-lg-3 pt-1" *ngFor="let book of booksList">
-            <div class="box-shadow">
-              <div class="card">
-                <img
-                  class="img-fluid"
-                  style="height: 200px"
-                  [src]="book.imageUrl"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{{ book.title }}</h5>
-                  <p class="card-text">
-                    <span class="text-danger fw-semibold me-2"
-                      >{{ book.qty }}</span
-                    >
-                    <span class="text-success ms-2"
-                      >{{ book.author }}</span
-                    >
-                  </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let book of booksList">
+      <div class="ibox">
+        <div class="ibox-content book-box">
+          <div class="image">
+            <img class="img" [src]="book.imageUrl" alt="book.title" />
+          </div>
+          <div class="book-desc">
+            <small class="text-muted">{{ book.title }}</small>
+            <p class="author-name">{{ book.author }}</p>
 
-                  <div class="row">
-                    <div class="col-6">
-                      <i
-                        class="fa-solid fa-star-half-stroke m-0"
-                        style="color: #f1f50f"
-                      ></i>
-                      <span class="text-muted">(21)</span>
-                    </div>
-                    <div class="col-6 text-end">
-                      <button class="btn btn-sm btn-success" [routerLink]="['/books','details',book._id]">
-                        Continue reading
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="m-t text-righ">
+              <button
+                class="btn btn-sm btn-success"
+                [routerLink]="['/books', 'details', book._id]"
+              >
+                Continue reading
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
