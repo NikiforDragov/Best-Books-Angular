@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { FIREBASE_URL } from '../shared/environments/constants';
+import { FIREBASE_URL } from '../shared/constants';
 import { IBook } from '../shared/interfaces/book';
 
 @Injectable({

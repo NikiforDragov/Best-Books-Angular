@@ -12,19 +12,17 @@ export class BooksListComponent implements OnInit {
 
   isLoading: boolean = false;
 
-  constructor(
-    private bookService: BookService
-  ) {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-    this.loadAllBooks()
+    this.loadAllBooks();
   }
 
   loadAllBooks(): void {
     this.isLoading = true;
     this.bookService.getAllBooks().subscribe(
       (response) => {
-        this.booksList = Object.values(response)
+        console.log((this.booksList = Object.values(response)));
       },
       (error) => {
         console.error('Request failed!');

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
   ngOnInit(): void {}
+  
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
 
     const { email, password } = form.value;
 
-    this.userService.login(email,password).subscribe((user) => {
-      if(Object.keys(user).length > 0) {
+    this.userService.login(email, password).subscribe((user) => {
+      if (Object.keys(user).length > 0) {
         console.log(user);
         this.router.navigate(['/']);
       }

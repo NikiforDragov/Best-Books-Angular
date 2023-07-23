@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
 
+import { v4 as uuidv4 } from 'uuid';
+
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
@@ -18,10 +20,11 @@ export class AddBookComponent {
       return;
     }
 
-    const bookData = form.value;
-
+    const { ...bookData } = form.value;
+    bookData._id = uuidv4();
+  
     this.bookService.createBook(bookData).subscribe({
-      next: () => this.router.navigate(['/books'])
+      next: () => this.router.navigate(['/books']),
     });
   }
 }

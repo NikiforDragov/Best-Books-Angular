@@ -9,6 +9,8 @@ import { AddBookComponent } from './books/add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './user/profile/profile.component';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
 
 
 
@@ -19,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     BooksListComponent,
     AddBookComponent,
+    ProfileComponent,
+    BookDetailsComponent,
   ],
   imports: [
     CommonModule, RouterModule , FormsModule, HttpClientModule

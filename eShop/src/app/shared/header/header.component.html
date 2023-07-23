@@ -33,27 +33,40 @@
               books
             </a>
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase text-black me-1"
-              routerLink="/add"
-              >add</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase text-black me-1"
-              routerLink="/login"
-              >Login</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase text-black me-1"
-              routerLink="/register"
-              >Register</a
-            >
-          </li>
+          <!-- For Logged in users -->
+          <ng-container *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-uppercase text-black me-1"
+                routerLink="/add"
+                >add</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-uppercase text-black me-1"
+                routerLink="/profile"
+                >profile</a
+              >
+            </li>
+          </ng-container>
+          <!-- For guest users -->
+          <ng-container *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-uppercase text-black me-1"
+                routerLink="/login"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-uppercase text-black me-1"
+                routerLink="/register"
+                >Register</a
+              >
+            </li>
+          </ng-container>
           <li class="nav-item">
             <a
               class="nav-link fw-semibold text-uppercase text-black me-1"
