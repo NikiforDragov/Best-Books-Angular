@@ -1,83 +1,41 @@
 <header>
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-top"
-  >
-    <div class="container">
-      <a class="navbar-brand fs-2 fw-bold" routerLink="/"
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/"
         ><i class="fa-sharp fa-solid fa-book"></i
         ><span class="textBlur">Best-Books</span></a
       >
-      <!-- Nav Items -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase me-1 text-black me-1"
-              routerLink="/"
-              id="navbar"
-              role="button"
-              aria-expanded="false"
-            >
-              home
-            </a>
+            <a class="nav-link" routerLink="/">HOME</a>
           </li>
-
           <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase text-black me-1"
-              routerLink="/books"
-              id="navbar"
-              role="button"
-              aria-expanded="false"
-            >
-              books
-            </a>
+            <a class="nav-link" routerLink="/books">BOOKS</a>
           </li>
-          <!-- For Logged in users -->
-          <ng-container *ngIf="isLoggedIn">
-            <li class="nav-item">
-              <a
-                class="nav-link fw-semibold text-uppercase text-black me-1"
-                routerLink="/add"
-                >add</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link fw-semibold text-uppercase text-black me-1"
-                routerLink="/profile"
-                >profile</a
-              >
-            </li>
-          </ng-container>
           <!-- For guest users -->
           <ng-container *ngIf="!isLoggedIn">
             <li class="nav-item">
-              <a
-                class="nav-link fw-semibold text-uppercase text-black me-1"
-                routerLink="/login"
-                >Login</a
-              >
+              <a class="nav-link" routerLink="/login">LOGIN</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link fw-semibold text-uppercase text-black me-1"
-                routerLink="/register"
-                >Register</a
-              >
+              <a class="nav-link" routerLink="/register">REGISTER</a>
             </li>
           </ng-container>
-          <li class="nav-item">
-            <a
-              class="nav-link fw-semibold text-uppercase text-black me-1"
-              href="#"
-              ><i
-                class="fa-solid fa-magnifying-glass fa-lg"
-                style="color: #000000"
-              ></i>
-            </a>
-          </li>
+          <!-- For logged in users -->
+          <ng-container *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/add">ADD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile">PROFILE</a>
+            </li>
+          </ng-container>
         </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search" />
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
       </div>
     </div>
   </nav>
