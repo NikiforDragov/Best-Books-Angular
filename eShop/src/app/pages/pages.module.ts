@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './user/profile/profile.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 
 
@@ -23,6 +24,7 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
     AddBookComponent,
     ProfileComponent,
     BookDetailsComponent,
+    EditBookComponent,
   ],
   imports: [
     CommonModule, RouterModule , FormsModule, HttpClientModule

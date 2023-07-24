@@ -26,4 +26,8 @@ export class BookService {
   createBook(bookData: IBook): Observable<IBook> {
     return this.http.post<IBook>(`${FIREBASE_URL}/books.json`, bookData);
   }
+
+  editBook(bookId:string,bookData:IBook): Observable<IBook> {
+    return this.http.patch<IBook>(`${FIREBASE_URL}/books/${bookId}.json`, bookData);
+  }
 }

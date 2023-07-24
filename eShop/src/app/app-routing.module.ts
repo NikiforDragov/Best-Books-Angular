@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/user/register/register.component';
 import { AddBookComponent } from './pages/books/add-book/add-book.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { BookDetailsComponent } from './pages/books/book-details/book-details.component';
+import { EditBookComponent } from './pages/books/edit-book/edit-book.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddBookComponent,
+  },
+  {
+    path: 'books/edit/:bookId',
+    component: EditBookComponent,
   },
 ];
 

@@ -9,9 +9,16 @@
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-6">
-            <button class="btn btn-warning btn-rounded">Edit</button>
+            <button
+              class="btn btn-warning btn-rounded"
+              [routerLink]="['/books', 'edit', bookId]"
+            >
+              Edit
+            </button>
             <button class="btn btn-danger btn-rounded">Delete</button>
-            <button class="btn btn-dark btn-rounded" routerLink="/books">Back</button>
+            <button class="btn btn-dark btn-rounded" routerLink="/books">
+              Back
+            </button>
             <h4 class="box-title mt-5">Description</h4>
             <p>
               {{ bookData.description }}
@@ -32,7 +39,7 @@
                   </tr>
                   <tr>
                     <td>Genre</td>
-                    <td>{{bookData.genre}}</td>
+                    <td>{{ bookData.genre }}</td>
                   </tr>
                   <tr>
                     <td>Publish date</td>

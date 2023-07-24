@@ -10,15 +10,16 @@ import { IBook } from 'src/app/shared/interfaces/book';
 })
 export class BookDetailsComponent implements OnInit {
   bookData!: IBook;
+  bookId!: string;
 
   constructor(private bookService: BookService,private route: ActivatedRoute) {}
 
 
   ngOnInit(): void {
-    const bookId: string = this.route.snapshot.params['bookId']
+    this.bookId= this.route.snapshot.params['bookId']
     
-    this.bookService.getBookById(bookId).subscribe((data) => {
-      this.bookData = Object.values(data)[0]
+    this.bookService.getBookById(this.bookId).subscribe((data) => {
+      this.bookData = Object.values(data)[0]      
     });
   }
 }
