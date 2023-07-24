@@ -15,7 +15,7 @@ export class BookService {
     return this.http.get<IBook[]>(FIREBASE_URL + '/books.json');
   }
 
-  getBookById(bookId: string) {
+  getBookById(bookId: string): Observable<IBook> {
     return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
       params: new HttpParams()
         .set('orderBy', '"_id"')
@@ -29,5 +29,9 @@ export class BookService {
 
   editBook(bookId:string,bookData:IBook): Observable<IBook> {
     return this.http.patch<IBook>(`${FIREBASE_URL}/books/${bookId}.json`, bookData);
+  }
+
+  deleteBook(bookId:string) {
+    return this.http.delete<IBook>(`${FIREBASE_URL}/books/${bookId}.json`)
   }
 }
