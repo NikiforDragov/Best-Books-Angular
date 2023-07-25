@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
+import { UserService } from 'src/app/services/user.service';
 import { IBook } from 'src/app/shared/interfaces/book';
 
 @Component({
@@ -12,9 +13,12 @@ export class BookDetailsComponent implements OnInit {
   bookData!: IBook;
   bookId!: string;
   bookIdInDb!: string;
+  userId: string = this.userService.userId;
+  isOwner: boolean = false;
 
   constructor(
     private bookService: BookService,
+    private userService: UserService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -25,13 +29,18 @@ export class BookDetailsComponent implements OnInit {
     this.bookService.getBookById(this.bookId).subscribe((data) => {
       this.bookData = Object.values(data)[0];
       this.bookIdInDb = Object.keys(data)[0];
+
+      if (this.bookData.ownerId === this.userId) {
+        this.isOwner = true;
+      }
     });
+    
   }
 
   onDeleteHandler() {
     this.bookService.deleteBook(this.bookIdInDb).subscribe(
       (response) => {
-        this.router.navigate(['/books'])
+        this.router.navigate(['/books']);
       },
       (error) => {
         console.error(error);

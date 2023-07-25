@@ -33,6 +33,7 @@
                   ngModel
                   #inputEmail="ngModel"
                   required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 />
               </div>
               <!-- Email Validations -->
@@ -43,6 +44,13 @@
                   *ngIf="inputEmail.errors?.['required']"
                 >
                   Email is required!
+                </p>
+                <p
+                  class="text-danger"
+                  style="margin-left: 4%"
+                  *ngIf="inputEmail.errors?.['pattern']"
+                >
+                  Invalid email!
                 </p>
               </ng-container>
               <div class="input-group mb-3">
@@ -117,6 +125,25 @@
                   minlength="6"
                 />
               </div>
+              <ng-container>
+                <ng-container *ngIf="inputRePassword.touched">
+                  <p
+                    class="text-danger"
+                    style="margin-left: 4%"
+                    *ngIf="inputRePassword.errors?.['required']"
+                  >
+                    Password is required!
+                  </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="inputPassword.errors?.['minlength']"
+                  >
+                    Password must be at least
+                    {{inputPassword.errors?.['minlength']['requiredLength']}}
+                    characters!
+                  </p>
+                </ng-container>
+              </ng-container>
               <div class="row">
                 <div class="col-6">
                   <button type="submit" class="btn btn-dark px-4">Login</button>
@@ -146,7 +173,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- <div class="form-signin w-100 m-auto">
   <form #form="ngForm" (ngSubmit)="onRegister(form)">

@@ -15,7 +15,6 @@ export class UserService {
 
   constructor(
     private fbAuth: AngularFireAuth,
-    private http: HttpClient,
     private router: Router
   ) {
     this.fbAuth.authState.subscribe((user) => {
@@ -33,6 +32,12 @@ export class UserService {
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null ? true : false;
+  }
+  
+  get userId(): string {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    const userId = user.uid
+    return userId
   }
 
   async register(email: string, password: string) {

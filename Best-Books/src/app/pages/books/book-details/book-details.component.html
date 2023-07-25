@@ -9,13 +9,20 @@
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-6">
-            <button
-              class="btn btn-warning btn-rounded"
-              [routerLink]="['/books', 'edit', bookId]"
-            >
-              Edit
-            </button>
-            <button class="btn btn-danger btn-rounded" (click)="onDeleteHandler()">Delete</button>
+            <ng-container *ngIf="isOwner">
+              <button
+                class="btn btn-warning btn-rounded"
+                [routerLink]="['/books', 'edit', bookId]"
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-danger btn-rounded"
+                (click)="onDeleteHandler()"
+              >
+                Delete
+              </button>
+            </ng-container>
             <button class="btn btn-dark btn-rounded" routerLink="/books">
               Back
             </button>

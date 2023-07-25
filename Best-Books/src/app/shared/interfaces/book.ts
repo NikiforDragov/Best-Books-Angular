@@ -7,4 +7,5 @@ export interface IBook {
   description: string;
   pages: number;
   publicationDate: Date;
+  ownerId?:string,
 }
