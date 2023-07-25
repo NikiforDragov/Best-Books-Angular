@@ -45,6 +45,30 @@
                   Email is required!
                 </p>
               </ng-container>
+              <div class="input-group mb-3">
+                <span class="input-group-addon"
+                  ><i class="fa fa-user"></i
+                ></span>
+                <input
+                  type="text"
+                  name="displayName"
+                  class="form-control"
+                  placeholder="Username"
+                  ngModel
+                  #inputUsername="ngModel"
+                  required
+                />
+              </div>
+              <!-- Username Validations -->
+              <ng-container *ngIf="inputUsername.touched">
+                <p
+                  class="text-danger"
+                  style="margin-left: 4%"
+                  *ngIf="inputUsername.errors?.['required']"
+                >
+                  Username is required!
+                </p>
+              </ng-container>
               <div class="input-group mb-4">
                 <span class="input-group-addon"
                   ><i class="fa fa-lock"></i

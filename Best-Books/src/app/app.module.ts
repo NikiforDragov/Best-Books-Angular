@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { PagesModule } from './pages/pages.module';
     SharedModule,
     HttpClientModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

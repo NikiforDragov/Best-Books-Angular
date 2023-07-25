@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService) {}
   errorMsg!: string;
 
   onRegister(form: NgForm): void {
@@ -17,17 +16,8 @@ export class RegisterComponent {
       return;
     }
 
-    const { email, username, password } = form.value;
+    const { email,password } = form.value;
 
-    this.userService.register(email, username, password).subscribe(
-      (response) => {
-        form.reset();
-        this.router.navigate(['login']);
-      },
-      // Todo error handling
-      (error) => {
-        this.errorMsg = error.error.error.message;
-      }
-    );
+    this.userService.register(email,password)
   }
 }

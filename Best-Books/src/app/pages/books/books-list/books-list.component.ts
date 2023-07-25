@@ -25,7 +25,7 @@ export class BooksListComponent implements OnInit {
         this.booksList = Object.values(response);
       },
       (error) => {
-        console.error('Request failed!');
+        window.alert(error.error.errorMessage)
         this.isLoading = false;
       }
     );

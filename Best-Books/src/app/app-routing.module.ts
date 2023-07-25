@@ -9,6 +9,8 @@ import { AddBookComponent } from './pages/books/add-book/add-book.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { BookDetailsComponent } from './pages/books/book-details/book-details.component';
 import { EditBookComponent } from './pages/books/edit-book/edit-book.component';
+import { UserActivate } from './shared/guards/user.activate';
+import { GuestActivate } from './shared/guards/guest.activate';
 
 const routes: Routes = [
   {
@@ -19,14 +21,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [GuestActivate],
   },
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [GuestActivate],
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [UserActivate],
   },
   {
     path: 'books',
@@ -35,14 +40,17 @@ const routes: Routes = [
   {
     path: 'books/details/:bookId',
     component: BookDetailsComponent,
+    canActivate: [UserActivate],
   },
   {
     path: 'add',
     component: AddBookComponent,
+    canActivate: [UserActivate],
   },
   {
     path: 'books/edit/:bookId',
     component: EditBookComponent,
+    canActivate: [UserActivate],
   },
 ];
 

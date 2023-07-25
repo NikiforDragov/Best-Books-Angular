@@ -13,7 +13,6 @@ import { v4 as uuidv4 } from 'uuid';
 export class AddBookComponent {
   constructor(private bookService: BookService, private router: Router) {}
 
-  //TODO Error handling
 
   onAddBookHandler(form: NgForm) {
     if (form.invalid) {
@@ -22,9 +21,10 @@ export class AddBookComponent {
 
     const { ...bookData } = form.value;
     bookData._id = uuidv4();
-  
+
     this.bookService.createBook(bookData).subscribe({
       next: () => this.router.navigate(['/books']),
+      error: (err) => window.alert(err.error.error.message),
     });
   }
 }
