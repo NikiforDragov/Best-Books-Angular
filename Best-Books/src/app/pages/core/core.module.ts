@@ -5,14 +5,15 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent , HeaderComponent, FooterComponent],
+  declarations: [HomeComponent , HeaderComponent, FooterComponent, SpinnerComponent],
   imports: [
     CommonModule, RouterModule,
   ],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent, SpinnerComponent],
 })
 export class CoreModule { }
