@@ -1,6 +1,6 @@
 # Angular Project Best-Books 2023
 
-Small website where users can post their favorite books. Using Angular for front-end, Firebase as backend ang Bootstrap
+Small website where users can post their favorite books. Using Angular for front-end, Firebase as backend and Bootstrap
 
 ## Short info and functionalities:
 
