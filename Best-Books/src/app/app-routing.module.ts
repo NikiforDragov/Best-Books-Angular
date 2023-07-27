@@ -1,16 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-import { BooksListComponent } from './pages/books/books-list/books-list.component';
-import { LoginComponent } from './pages/user/login/login.component';
-import { RegisterComponent } from './pages/user/register/register.component';
-import { AddBookComponent } from './pages/books/add-book/add-book.component';
-import { ProfileComponent } from './pages/user/profile/profile.component';
-import { BookDetailsComponent } from './pages/books/book-details/book-details.component';
-import { EditBookComponent } from './pages/books/edit-book/edit-book.component';
-import { UserActivate } from './shared/guards/user.activate';
-import { GuestActivate } from './shared/guards/guest.activate';
+import { HomeComponent } from './pages/core/home/home.component';
+
 
 const routes: Routes = [
   {
@@ -19,38 +11,14 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [GuestActivate],
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [GuestActivate],
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [UserActivate],
+    path: 'user',
+    loadChildren: () =>
+      import('./pages/user/user.module').then((m) => m.UserModule),
   },
   {
     path: 'books',
-    component: BooksListComponent,
-  },
-  {
-    path: 'books/details/:bookId',
-    component: BookDetailsComponent,
-    canActivate: [UserActivate],
-  },
-  {
-    path: 'add',
-    component: AddBookComponent,
-    canActivate: [UserActivate],
-  },
-  {
-    path: 'books/edit/:bookId',
-    component: EditBookComponent,
-    canActivate: [UserActivate],
+    loadChildren: () =>
+      import('./pages/books/books.module').then((m) => m.BooksModule),
   },
 ];
 

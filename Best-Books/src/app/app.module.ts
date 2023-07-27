@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './pages/core/core.module';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from './shared/shared.module';
-import { PagesModule } from './pages/pages.module';
 
-import { environment } from '../environments/environment';
+import { environment } from './shared/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 
 
@@ -22,8 +22,7 @@ import { AngularFireModule } from '@angular/fire/compat';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule,
-    SharedModule,
+    CoreModule,
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),

@@ -63,7 +63,7 @@ export class UserService {
   async logout() {
     return this.fbAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/user/login']);
     });
   }
 }
