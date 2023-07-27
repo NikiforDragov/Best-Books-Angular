@@ -1,23 +1,27 @@
-Angular Project Best-Books 2023
+# Best-Books
 
-Small website where users can post their favorite books. 
-Using Angular for front-end, Firebase as backend ang Bootstrap
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
-Short info and functionalities:
+## Development server
 
-Components:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Books module - contains  catalog component and components for add,edit and delete books.
-User module - contains components for login, register and profile
-Core module - contains footer, header, home and spinner components
-Shared folder - contains environments, route guards, interceptors, interfaces and constants.
-Services folder - contains auth service, loader service and services for handling calls to database.
+## Code scaffolding
 
-Guests:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Have access to the home page and catalog. On clicking continue reading button, redirect to Login Page.
+## Build
 
-Registered / Logged-in Users can:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Edit, delete posts /only if user is the owner of the post/
-View published books by all users.
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
