@@ -3,7 +3,6 @@
 html,
 body {
     height: 100%;
-    background-image: url('./assets/cover.png');
-    background-repeat: no-repeat;
+    background-image: url('./assets/cover1.png');
     background-size: 100%;
 }

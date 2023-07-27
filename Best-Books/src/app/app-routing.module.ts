@@ -20,6 +20,9 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/books/books.module').then((m) => m.BooksModule),
   },
+  {
+    path: '**', component: HomeComponent
+  }
 ];
 
 @NgModule({
