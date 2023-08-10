@@ -26,7 +26,6 @@ export class BooksListComponent implements OnInit {
       },
       (error) => {
         window.alert(error.error.errorMessage)
-        this.isLoading = false;
       }
     );
   }

@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { IUser } from '../shared/interfaces/user';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 

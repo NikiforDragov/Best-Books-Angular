@@ -15,6 +15,14 @@ export class BookService {
     return this.http.get<IBook[]>(FIREBASE_URL + '/books.json');
   }
 
+  getAllBooksByOwnerId(ownerId: string): Observable<IBook> {
+    return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
+      params: new HttpParams()
+        .set('orderBy', '"ownerId"')
+        .set('equalTo', `"${ownerId}"`),
+    });
+  }
+
   getBookById(bookId: string): Observable<IBook> {
     return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
       params: new HttpParams()
@@ -27,11 +35,14 @@ export class BookService {
     return this.http.post<IBook>(`${FIREBASE_URL}/books.json`, bookData);
   }
 
-  editBook(bookId:string,bookData:IBook): Observable<IBook> {
-    return this.http.patch<IBook>(`${FIREBASE_URL}/books/${bookId}.json`, bookData);
+  editBook(bookId: string, bookData: IBook): Observable<IBook> {
+    return this.http.patch<IBook>(
+      `${FIREBASE_URL}/books/${bookId}.json`,
+      bookData
+    );
   }
 
-  deleteBook(bookId:string) {
-    return this.http.delete<IBook>(`${FIREBASE_URL}/books/${bookId}.json`)
+  deleteBook(bookId: string) {
+    return this.http.delete<IBook>(`${FIREBASE_URL}/books/${bookId}.json`);
   }
 }
