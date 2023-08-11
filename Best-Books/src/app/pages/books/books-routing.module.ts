@@ -6,6 +6,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BooksListComponent } from './books-list/books-list.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     canActivate: [UserActivate],
     component: AddBookComponent,
   },
+  {
+    path: 'search',
+    canActivate: [UserActivate],
+    component: SearchComponent
+  }
 ];
 
 @NgModule({

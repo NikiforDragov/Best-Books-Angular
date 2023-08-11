@@ -7,6 +7,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BooksListComponent } from './books-list/books-list.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     AddBookComponent,
     BookDetailsComponent,
     EditBookComponent,
+    SearchComponent,
   ],
   imports: [CommonModule, FormsModule, BooksRoutingModule],
 })

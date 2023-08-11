@@ -28,17 +28,20 @@
               <a class="nav-link" routerLink="/books/add">ADD</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/user/profile">PROFILE</a>
+              <button class="nav-link" type="button" routerLink="/books/search">
+                SEARCH
+              </button>
             </li>
             <li class="nav-item">
-              <button class="nav-link" (click)="onLogoutHandler()">LOGOUT</button>
+              <a class="nav-link" routerLink="/user/profile">MY BOOKS</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" (click)="onLogoutHandler()">
+                LOGOUT
+              </button>
             </li>
           </ng-container>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Search" />
-          <button class="btn btn-primary" type="button">Search</button>
-        </form>
       </div>
     </div>
   </nav>

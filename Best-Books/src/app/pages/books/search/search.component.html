@@ -1,0 +1,14 @@
+<div class="container">
+  <form class="d-flex" #form="ngForm" (ngSubmit)="onSearchHandler(form)" >
+    <input
+      class="form-control me-2"
+      type="text"
+      name="searchTitle"
+      placeholder="Search by title"
+      ngModel
+      #inputSearch="ngModel"
+      required
+    />
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div>

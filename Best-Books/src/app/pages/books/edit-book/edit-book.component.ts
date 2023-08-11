@@ -20,6 +20,7 @@ export class EditBookComponent implements OnInit {
     publicationDate: new Date(),
   };
   bookIdInDb!: string;
+  bookId!: string
 
   constructor(
     private bookService: BookService,
@@ -28,18 +29,18 @@ export class EditBookComponent implements OnInit {
   ) {}
 
   onEditBookHandler(form: NgForm) {
-    const bookId: string = this.route.snapshot.params['bookId'];
+    this.bookId = this.route.snapshot.params['bookId'];
     this.bookService
       .editBook(this.bookIdInDb, form.value)
       .subscribe((response) => {
-        this.router.navigate([`/books/details/${bookId}`]);
+        this.router.navigate([`/books/details/${this.bookId}`]);
       });
   }
 
   ngOnInit(): void {
-    const bookId: string = this.route.snapshot.params['bookId'];
+    this.bookId = this.route.snapshot.params['bookId'];
 
-    this.bookService.getBookById(bookId).subscribe(
+    this.bookService.getBookById(this.bookId).subscribe(
       (data) => {
         this.bookData = Object.values(data)[0];
         this.bookIdInDb = Object.keys(data)[0];

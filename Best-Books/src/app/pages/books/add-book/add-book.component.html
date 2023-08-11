@@ -91,6 +91,7 @@
                   ngModel
                   #inputDescription="ngModel"
                   required
+                  maxlength="1000"
                 ></textarea>
               </div>
               <!-- Validations -->
@@ -100,6 +101,12 @@
                   *ngIf="inputDescription.errors?.['required']"
                 >
                   Description is required!
+                </p>
+                <p
+                  class="text-danger"
+                  *ngIf="inputDescription.errors?.['maxlength']"
+                >
+                  Description is too long!
                 </p>
               </ng-container>
               <div class="input-group mb-4">

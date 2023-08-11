@@ -65,3 +65,8 @@ p {
   display: flex;
   width: 100%;
 }
+
+.btn {
+  margin-left: 1%;
+  padding-inline: 4%;
+}

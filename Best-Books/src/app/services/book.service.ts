@@ -23,6 +23,15 @@ export class BookService {
     });
   }
 
+  getAllBooksByTitle(title: string): Observable<IBook> {
+    return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
+      params: new HttpParams()
+        .set('orderBy', '"title"')
+        .set('equalTo', `"${title}"`),
+    });
+  }
+
+
   getBookById(bookId: string): Observable<IBook> {
     return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
       params: new HttpParams()
@@ -30,6 +39,7 @@ export class BookService {
         .set('equalTo', `"${bookId}"`),
     });
   }
+
 
   createBook(bookData: IBook): Observable<IBook> {
     return this.http.post<IBook>(`${FIREBASE_URL}/books.json`, bookData);

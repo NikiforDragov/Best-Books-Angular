@@ -90,6 +90,7 @@
                   [(ngModel)]="bookData.description"
                   #inputDescription="ngModel"
                   required
+                  maxlength="1000"
                 ></textarea>
               </div>
               <!-- Validations -->
@@ -141,8 +142,15 @@
               </ng-container>
               <div class="row">
                 <div class="col-6">
-                  <button type="submit" class="btn btn-dark px-4">
+                  <button type="submit" class="btn btn-warning px-4">
                     Edit Book
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-dark px-4"
+                    [routerLink]="['/books', 'details', bookId]"
+                  >
+                    Back
                   </button>
                 </div>
               </div>
