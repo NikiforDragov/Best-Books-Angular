@@ -6,23 +6,30 @@ import { IBook } from 'src/app/shared/interfaces/book';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   booksList: IBook[] = [];
-  isLoading:boolean = false;
+  isLoading: boolean = false;
 
-  constructor(private bookService: BookService){}
+  constructor(private bookService: BookService) {}
 
-  onSearchHandler(form:NgForm) {
-    const {searchTitle} = form.value;
-    
-    this.bookService.getAllBooksByTitle(searchTitle).subscribe(
+  onSearchHandler(form: NgForm) {
+    this.booksList = [];
+
+    const { searchTitle } = form.value;
+
+    this.bookService.getAllBooks().subscribe(
       (response) => {
-        this.booksList = Object.values(response);
-        console.log(response);
-        
+        Object.values(response).map((x) => {
+          if (x.title.toLowerCase().includes(searchTitle.toLowerCase())) {
+            this.booksList.push(x);
+          }
+        });
+      },
+      (error) => {
+        window.alert(error.error.errorMessage);
       }
-    )
+    );
   }
 }
