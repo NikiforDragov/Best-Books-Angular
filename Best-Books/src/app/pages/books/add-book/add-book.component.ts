@@ -31,7 +31,7 @@ export class AddBookComponent {
 
     this.bookService.createBook(bookData).subscribe({
       next: () => this.router.navigate(['/books']),
-      error: (err) => window.alert(err.message),
+      error: (error) => window.alert(error.error.errorMessage),
     });
   }
 }

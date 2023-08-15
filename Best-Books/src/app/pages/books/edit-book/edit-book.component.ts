@@ -46,7 +46,7 @@ export class EditBookComponent implements OnInit {
         this.bookIdInDb = Object.keys(data)[0];
       },
       (error) => {
-        console.error(error);
+        window.alert(error.error.errorMessage)
       }
     );
   }

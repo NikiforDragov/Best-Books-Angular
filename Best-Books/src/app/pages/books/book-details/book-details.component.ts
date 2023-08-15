@@ -25,7 +25,7 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookId = this.route.snapshot.params['bookId'];
-
+  
     this.bookService.getBookById(this.bookId).subscribe((data) => {
       this.bookData = Object.values(data)[0];
       this.bookIdInDb = Object.keys(data)[0];
@@ -43,7 +43,7 @@ export class BookDetailsComponent implements OnInit {
         this.router.navigate(['/books']);
       },
       (error) => {
-        console.error(error);
+        window.alert(error.error.errorMessage)
       }
     );
   }

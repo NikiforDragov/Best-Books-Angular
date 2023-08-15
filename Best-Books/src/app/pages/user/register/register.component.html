@@ -136,17 +136,23 @@
                   </p>
                   <p
                     class="text-danger"
-                    *ngIf="inputPassword.errors?.['minlength']"
+                    *ngIf="inputRePassword.errors?.['minlength']"
                   >
                     Password must be at least
                     {{inputPassword.errors?.['minlength']['requiredLength']}}
                     characters!
                   </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="inputPassword.value !== inputRePassword.value"
+                  >
+                    Passwords don't match!
+                  </p>
                 </ng-container>
               </ng-container>
               <div class="row">
                 <div class="col-6">
-                  <button type="submit" class="btn btn-dark px-4">Login</button>
+                  <button type="submit" class="btn btn-dark px-4">Register</button>
                 </div>
               </div>
             </form>

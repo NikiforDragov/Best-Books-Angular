@@ -26,8 +26,7 @@ export class BookService {
   getAllBooksByTitle(title: string): Observable<IBook> {
     return this.http.get<IBook>(`${FIREBASE_URL}/books.json?print=pretty`, {
       params: new HttpParams()
-        .set('orderBy', '"title"')
-        .set('equalTo', `"${title}"`),
+        .set('query', `"${title}"`)
     });
   }
 
