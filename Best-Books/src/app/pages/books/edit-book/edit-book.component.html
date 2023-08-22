@@ -16,6 +16,7 @@
                   [(ngModel)]="bookData.title"
                   #inputTitle="ngModel"
                   required
+                  maxlength="100"
                 />
               </div>
               <!--Validations -->
@@ -34,6 +35,7 @@
                   [(ngModel)]="bookData.author"
                   #inputAuthor="ngModel"
                   required
+                  maxlength="100"
                 />
               </div>
               <!-- Validations -->
@@ -52,6 +54,7 @@
                   [(ngModel)]="bookData.genre"
                   #inputGenre="ngModel"
                   required
+                  maxlength="100"
                 />
               </div>
               <!--Validations -->
@@ -70,6 +73,7 @@
                   [(ngModel)]="bookData.imageUrl"
                   #inputImageUrl="ngModel"
                   required
+                  maxlength="500"
                 />
               </div>
               <!-- Validations -->
@@ -112,6 +116,7 @@
                   [(ngModel)]="bookData.pages"
                   #inputPages="ngModel"
                   required
+                  maxlength="6"
                 />
               </div>
               <!-- Validations -->
